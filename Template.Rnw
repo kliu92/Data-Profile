@@ -42,6 +42,7 @@ setwd('/Users/Fliptop/EXTRACT_ALL/Report_Test/')
 
 <<label=rev_distr, fig=TRUE, echo=FALSE, eval=TRUE, results=tex, include=FALSE>>=
 #Dataset to conduct report on ----------------------------------------------------------------------------------------------------------------
+#Need to change the input file and assign the correct name.
 mkto <- read.csv('/Users/Fliptop/IdeaProjects/Classification/stuff2/lead_activity_features_9017947_OUT_test.csv', header=T,stringsAsFactor=F)
 
 df_default <- mkto
