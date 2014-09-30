@@ -225,7 +225,7 @@ decomp_graphs <- function(df, df_full, label){
   legend('topright', 'Global Coverage', lty = 6, lwd = 2.5, col = 'orangered2')
 }
 
-decomp_graphs(mko_list, mko_list_full, label = 'Proportion of coverage over Marketing Activity Variables')
+decomp_graphs(mko_list, mko_list_full, 'Proportion of coverage over Marketing Activity Variables')
 @
 
 <<label = platform_data_coverage, fig=TRUE, echo=FALSE, eval=TRUE, results=tex, include=FALSE>>=
