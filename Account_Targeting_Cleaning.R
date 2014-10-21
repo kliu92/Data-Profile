@@ -239,5 +239,3 @@ write.csv(ON24_opp_removed, 'ON24_cleaned.csv')
 write.csv(marketo_opp_removed, 'Marketo_cleaned.csv')
 write.csv(insideview_opp_removed2, 'InsideView_cleaned.csv')
 
-
-grepl(',,', list(appboy_new$nam))
