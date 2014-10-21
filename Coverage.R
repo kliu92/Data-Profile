@@ -103,5 +103,10 @@ for (name in total_name_list){
   colnames(xfinal) <- x_final_names_new
 }
 
+
+Qlik_signal_contribution <- t(read.csv('/Users/Fliptop/EXTRACT_ALL/Report_Test/signals_9018021.csv', stringsAsFactors = F, header = T))
+xfinal_sig <- merge(xfinal, Qlik_signal_contribution, by='row.names' ,all.x = T)
+
+
 write.csv(xfinal, file = "Coverage_Report.csv")
 
