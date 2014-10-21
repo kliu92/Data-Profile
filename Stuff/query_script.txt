@@ -92,8 +92,28 @@ where IsClosed = true and IsWon=true and CALENDAR_YEAR(CloseDate) >= 2014 and CA
 
 ---------------------------------------------------------------------------
 
-to run it -
+#to run jar file -
 java -jar fliptop-data-science-1.1.1-SNAPSHOT-jar-with-dependencies.jar 911556 true 2014-08-20 false 0.00 1
 
 "Required Arguments: <listId: Int> <isLeadList: Boolean> <startDate: yyyy-MM-dd> <hashIt: Boolean> <sparseRatio: Double> <modelId: Int>"
+
+---------------
+
+#To pull feature importance
+1) Get desired model name from MySQL
+
+select spendscore_job_id, ml_algorithm, model_version
+from spendscore_job
+where publisher_id=9018021
+
+2) cURL the signal contribution API using the appropriate publisher id and model version:
+
+curl http://prod-load-balancer-ml-servers-1112179997.us-east-1.elb.amazonaws.com:9527/signal-contribution/9018021/_1126_2014-10-09.08:41:50_RF3CL.clf
+
+3) Map the values to field names using MySQL
+
+select *
+from spend_score_training_headers
+where spendscore_job_id=1126
+
 
